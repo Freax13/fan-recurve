@@ -1,0 +1,16 @@
+[package]
+name = "fan-recurve"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.68"
+clap = { version = "4.0.32", features = ["derive"] }
+nix = "0.26.1"
+serde = { version = "1.0.152", features = ["derive"] }
+serde_yaml = "0.9.16"
+tracing = "0.1.37"
+tracing-subscriber = "0.3.16"
+
+[profile.release]
+opt-level = "z"

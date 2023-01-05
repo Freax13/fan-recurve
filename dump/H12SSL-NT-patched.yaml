@@ -1,0 +1,179 @@
+# This is a patched config I use on my system.
+# It does the following changes:
+# 1. Change the fan duty of the first segment to 0 for all sensors.
+# 2. Adjust the curve of the 10GbE sensor so that the first segment is at 75 degrees.
+# TODO: I should remove the second change once I install the fan on the 10GbE heatsink.
+
+board_offset: 2400384
+tables:
+- tn_offset: 2396536
+  pn_offset: 2396504
+  info:
+    zones:
+    - 0
+    sensors:
+    - ^CPU[0-9]? Temp.*
+  curves:
+    Optimal:
+      50: 0
+      60: 40
+      80: 80
+      90: 100
+- tn_offset: 2396472
+  pn_offset: 2396440
+  info:
+    zones:
+    - 0
+    sensors:
+    - DIMM
+    - PMEM
+  curves:
+    Optimal:
+      60: 0
+      65: 40
+      75: 80
+      80: 100
+- tn_offset: 2396088
+  pn_offset: 2396056
+  info:
+    zones:
+    - 0
+    - 1
+    sensors:
+    - Expander
+    - MB_10G
+    - MRVL
+    - NIC
+    - PMC
+    - SAS
+    - VRM
+  curves:
+    Optimal:
+      75: 0
+      80: 45
+      84: 81
+      90: 100
+- tn_offset: 2396280
+  pn_offset: 2396248
+  info:
+    zones:
+    - 0
+    - 1
+    sensors:
+    - AOC_SSD
+    - ^M2
+    - ^SSD
+    - ^U2
+  curves:
+    Optimal:
+      47: 0
+      52: 40
+      62: 80
+      67: 100
+- tn_offset: 2396344
+  pn_offset: 2396312
+  info:
+    zones:
+    - 0
+    - 1
+    sensors:
+    - HDD
+  curves:
+    Optimal:
+      32: 0
+      38: 40
+      47: 80
+      52: 100
+- tn_offset: 2396152
+  pn_offset: 2396120
+  info:
+    zones:
+    - 0
+    - 1
+    sensors:
+    - Inlet Temp
+  curves:
+    Optimal:
+      30: 0
+      33: 44
+      38: 84
+      40: 100
+- tn_offset: 2396408
+  pn_offset: 2396376
+  info:
+    zones:
+    - 1
+    sensors:
+    - PCH
+    - Peripheral Temp
+  curves:
+    Optimal:
+      60: 0
+      65: 40
+      75: 80
+      80: 100
+- tn_offset: 2396024
+  pn_offset: 2395992
+  info:
+    zones:
+    - 1
+    sensors:
+    - GPU
+  curves:
+    Optimal:
+      10: 100
+      15: 85
+      25: 50
+      35: 0
+- tn_offset: 2395960
+  pn_offset: 2395928
+  info:
+    zones:
+    - 1
+    sensors:
+    - AOC_FPGA
+  curves:
+    Optimal:
+      58: 0
+      68: 35
+      78: 65
+      88: 100
+- tn_offset: 2395896
+  pn_offset: 2395864
+  info:
+    zones:
+    - 1
+    sensors:
+    - ^FPGA
+  curves:
+    Optimal:
+      65: 0
+      75: 35
+      95: 65
+      95: 100
+- tn_offset: 2395832
+  pn_offset: 2395800
+  info:
+    zones:
+    - 1
+    sensors:
+    - ACC
+  curves:
+    Optimal:
+      58: 0
+      68: 35
+      78: 65
+      88: 100
+- tn_offset: 2396216
+  pn_offset: 2396184
+  info:
+    zones:
+    - 1
+    sensors:
+    - ART
+  curves:
+    Optimal:
+      45: 0
+      50: 40
+      60: 80
+      65: 100
